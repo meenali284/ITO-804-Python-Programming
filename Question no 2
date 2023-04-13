@@ -1,0 +1,37 @@
+from typing import List, Optional
+
+defearliest_trilogy_year(titles: List[str], years: List[int]) -> Optional[int]:
+"""
+    Returns the earliest year in which a trilogy of books was published, or None if no such trilogy exists.
+
+Args:
+titles (List[str]): A list of book titles.
+years (List[int]): A list of corresponding publication years.
+
+    Returns:
+Optional[int]: The earliest year in which a trilogy of books was published, or None if no such trilogy exists.
+"""
+iflen(years) < 3:
+return None
+
+fori in range(len(years)-2):
+        if years[i+2] == years[i+1]+1 == years[i]+2:
+return years[i]
+
+return None
+
+We start by checking if the number of books is less than 3, in which case there can be no trilogy. We then loop through the list of years from the first year to the third-to-last year, checking if the current year and the two subsequent years form a trilogy. If a trilogy is found, we return the earliest year of the trilogy. If no trilogy is found, we return None.
+
+Here's how you can use this function:
+
+titles = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6']
+years = [2019, 2021, 2012, 2013, 2016, 2017]
+print(earliest_trilogy_year(titles, years))
+# Output: None
+
+titles = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6']
+years = [2019, 2021, 2012, 2013, 2014, 2015]
+print(earliest_trilogy_year(titles, years))
+
+OUTPUT:-2012
+
