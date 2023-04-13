@@ -1,0 +1,46 @@
+def Remove(duplicate):
+final_list = []
+for num in duplicate:
+if num not in final_list:
+final_list.append(num)
+returnfinal_list
+
+# Driver Code
+duplicate = [[10,20],[40],[30,56,25],[10,20],[33],[40]]
+print(Remove(duplicate))
+
+OUTPUT :-
+[[10, 20], [40], [30, 56, 25], [33]]
+
+
+(B) Ans
+def shift_left(lst):
+    """
+    Shifts the elements of a list left by one position
+    """
+    return lst[1:] + [lst[0]]
+
+# example usage
+original_list = [1, 2, 3]
+shifted_list = shift_left(original_list)
+print(shifted_list)
+
+OUTPUT:-
+[2, 3, 1]
+
+
+(C) Ans
+sample_list = [11, 45, 8, 11, 23, 45, 23, 45, 89,11,89]
+print("Original list ", sample_list)
+
+count_dict = dict()
+for item in sample_list:
+    if item in count_dict:
+        count_dict[item] += 1
+    else:
+        count_dict[item] = 1
+print("Printing count of each item  ", count_dict)
+
+OUTPUT:-
+Original list  [11, 45, 8, 11, 23, 45, 23, 45, 89, 11, 89]
+Printing count of each item   {11: 3, 45: 3, 8: 1, 23: 2, 89: 2}
